@@ -1,0 +1,146 @@
+
+/*
+  reset.css
+  Minimal, modern CSS reset (opinionated) — safe base for most projects.
+  Goals:
+    - Remove inconsistent browser default spacing and behavior
+    - Make box-sizing predictable
+    - Improve media and form element defaults
+    - Keep accessibility-friendly defaults
+
+  Use: include this as the very first stylesheet in your project.
+*/
+
+/* Box model ------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; /* better text rendering on WebKit */
+  -moz-osx-font-smoothing: grayscale;  /* better text rendering on Firefox */
+}
+
+/* Remove default spacing ------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+ul, ol, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Base fonts & background ------------------ */
+html {
+  line-height: 1.15; /* sensible default for text spacing */
+  text-size-adjust: 100%; /* prevent font size adjustments after orientation changes in IE/Android */
+}
+
+body {
+  background: #fff;
+  color: inherit;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-size: 16px; /* developers can override */
+  line-height: 1.4;
+  text-rendering: optimizelegibility;
+}
+
+/* Links ----------------------------------- */
+a {
+  background-color: transparent;
+  color: inherit; /* leave color to author unless overridden */
+  text-decoration: none;
+}
+
+a:active, a:focus {
+  outline: none;
+}
+
+/* Typography ------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+/* Lists ----------------------------------- */
+ul, ol {
+  list-style: none;
+}
+
+/* Images & media -------------------------- */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Forms ----------------------------------- */
+button, input, select, textarea {
+  font: inherit; /* inherit font settings */
+  color: inherit;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  appearance: none;
+}
+
+input::-ms-clear, input::-ms-reveal {
+  display: none; /* remove clear button in IE/Edge */
+}
+
+/* Accessibility helpers ------------------- */
+[hidden] {
+  display: none !important;
+}
+
+/* Table defaults -------------------------- */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Reduce motion for users who prefer it ----- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility sensible defaults --------------- */
+:focus {
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
+}
+
+/* make form placeholders slightly dimmer  */
+::placeholder {
+  opacity: 0.6;
+}
+
+/* small helpers for contenteditable        */
+[contenteditable]:focus {
+  outline: none;
+}
+
